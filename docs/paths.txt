@@ -107,9 +107,10 @@ OnlineCore/src/Platform/Core/RootObject.cpp
 OnlineCore/src/Platform/Core/SpinTest.cpp
 OnlineCore/src/Platform/Core/String.cpp
 OnlineCore/src/Platform/Core/StringConversion.cpp
+OnlineCore/src/Platform/Core/StringStream.cpp
 OnlineCore/src/Platform/Core/SystemChecker.cpp
 OnlineCore/src/Platform/Core/SystemClock.cpp
-OnlineCore/src/Platform/Core/SystemError.cpp
+OnlineCore/src/Platform/Core/SystemErrsor.cpp
 OnlineCore/src/Platform/Core/ThreadSafeMemoryAllocator.cpp
 OnlineCore/src/Platform/Core/ThreadScrambler.cpp
 OnlineCore/src/Platform/Core/Tokenizer.cpp

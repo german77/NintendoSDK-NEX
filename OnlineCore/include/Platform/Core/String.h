@@ -11,9 +11,10 @@ void StrCopy(T*, const T*, u64);
 
 class String : public RootObject {
 public:
-    class NoAllocTag;
+    class NoAllocTag {};
 
     String();
+
     String(String::NoAllocTag);
     String(const char*);
     String(const wchar_t*);
@@ -34,7 +35,7 @@ public:
     void operator+=(const String&);
 
     void Truncate(u64) const;
-    void GetLength() const;
+    u64 GetLength() const;
     void Reserve(u64);
     void SetBufferPtr(char*);
     void SetStringToPreReservedBuffer(const char*);
@@ -48,21 +49,23 @@ public:
     void CopyString(char16_t*, u64) const;
     void ToUpper();
     void ToLower();
-    void FindSubstringCase(const char*, s32) const;
-    void FindSubstringNoCase(const char*) const;
+    s32 FindSubstringCase(const char*, s32) const;
+    s32 FindSubstringNoCase(const char*) const;
     void ByteArrayToBase64(const unsigned char*, u64, char*, u64);
     void Base64ToByteArray(const char*, u64, u8*, u64);
     void Base64ToByteArray(const String&, u8*, u64);
-    void ContainsCase(const String&) const;
+    bool ContainsCase(const String&) const;
     void ToUInt64() const;
-    void ContainsNoCase(const String&) const;
-    void SetDefaultStringEncoding(u32);
+    bool ContainsNoCase(const String&) const;
+    static void SetDefaultStringEncoding(u32);
     void Trace(u64);
 
     // operator const char*() const { return m_String; }
     const char* cstr() const { return m_String; }
 
 private:
+    static u32 s_uiDefaultStringEncoding;
+
     const char* m_String;
 };
 }  // namespace nn::nex
